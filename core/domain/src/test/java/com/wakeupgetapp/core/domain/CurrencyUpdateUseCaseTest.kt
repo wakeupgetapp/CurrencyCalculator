@@ -3,7 +3,7 @@ package com.wakeupgetapp.core.domain
 import com.wakeupgetapp.core.data.repository.CurrencyRepository
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import com.wakeupgetapp.core.model.CurrencyUpdateState
-import com.wakeupgetapp.network.model.CallResult
+import com.wakeupgetapp.core.network.model.CallResult
 import io.mockk.Runs
 import io.mockk.coEvery
 import io.mockk.coVerifyOrder

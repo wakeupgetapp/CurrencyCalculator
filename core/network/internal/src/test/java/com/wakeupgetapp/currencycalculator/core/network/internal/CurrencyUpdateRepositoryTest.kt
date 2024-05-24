@@ -1,13 +1,13 @@
-package com.wakeupgetapp.currencycalculator.network.internal
+package com.wakeupgetapp.currencycalculator.core.network.internal
 
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import com.wakeupgetapp.core.model.Currency
 import com.wakeupgetapp.core.model.CurrencyTable
 import com.wakeupgetapp.currencycalculator.network.internal.json.CcJsonReader
-import com.wakeupgetapp.network.internal.api.CurrencyApiService
-import com.wakeupgetapp.network.internal.api.CurrencyBackupApiService
-import com.wakeupgetapp.network.internal.repository.CurrencyUpdateRepositoryImpl
-import com.wakeupgetapp.network.model.CallResult
+import com.wakeupgetapp.core.network.internal.api.CurrencyApiService
+import com.wakeupgetapp.core.network.internal.api.CurrencyBackupApiService
+import com.wakeupgetapp.core.network.internal.repository.CurrencyUpdateRepositoryImpl
+import com.wakeupgetapp.core.network.model.CallResult
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.test.runTest
 import okhttp3.OkHttpClient

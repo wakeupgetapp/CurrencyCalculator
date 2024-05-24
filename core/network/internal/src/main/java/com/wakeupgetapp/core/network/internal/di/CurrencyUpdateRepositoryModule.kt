@@ -1,6 +1,6 @@
-package com.wakeupgetapp.network.internal.di
+package com.wakeupgetapp.core.network.internal.di
 
-import com.wakeupgetapp.network.internal.repository.CurrencyUpdateRepositoryImpl
+import com.wakeupgetapp.core.network.internal.repository.CurrencyUpdateRepositoryImpl
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import dagger.Binds
 import dagger.Module

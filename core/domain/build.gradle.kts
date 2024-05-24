@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.wakeupgetapp.core.model"
+    namespace = "com.wakeupgetapp.core.network.internal"
     compileSdk = 34
 
     defaultConfig {

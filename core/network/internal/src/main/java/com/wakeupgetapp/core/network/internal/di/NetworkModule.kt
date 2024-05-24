@@ -1,7 +1,7 @@
-package com.wakeupgetapp.network.internal.di
+package com.wakeupgetapp.core.network.internal.di
 
-import com.wakeupgetapp.network.internal.api.CurrencyApiService
-import com.wakeupgetapp.network.internal.api.CurrencyBackupApiService
+import com.wakeupgetapp.core.network.internal.api.CurrencyApiService
+import com.wakeupgetapp.core.network.internal.api.CurrencyBackupApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.wakeupgetapp.network.internal.model
+package com.wakeupgetapp.core.network.internal.model
 
 import com.google.gson.annotations.SerializedName
 

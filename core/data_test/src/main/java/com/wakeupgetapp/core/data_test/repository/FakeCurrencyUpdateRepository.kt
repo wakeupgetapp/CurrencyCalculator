@@ -2,7 +2,7 @@ package com.wakeupgetapp.core.data_test.repository
 
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import com.wakeupgetapp.core.model.CurrencyTable
-import com.wakeupgetapp.network.model.CallResult
+import com.wakeupgetapp.core.network.model.CallResult
 
 class FakeCurrencyUpdateRepository : CurrencyUpdateRepository {
     private var latestDataResult: CallResult<CurrencyTable> = CallResult.Failure(null, null, null)

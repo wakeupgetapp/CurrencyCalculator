@@ -1,4 +1,4 @@
-package com.wakeupgetapp.network.internal.di
+package com.wakeupgetapp.core.network.internal.di
 
 import dagger.Module
 import dagger.Provides

@@ -1,12 +1,12 @@
-package com.wakeupgetapp.network.internal.repository
+package com.wakeupgetapp.core.network.internal.repository
 
 import com.wakeupgetapp.core.model.Currency
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import com.wakeupgetapp.core.model.CurrencyTable
-import com.wakeupgetapp.network.internal.api.CurrencyApiService
-import com.wakeupgetapp.network.internal.api.CurrencyBackupApiService
-import com.wakeupgetapp.network.internal.model.CurrencyTableDto
-import com.wakeupgetapp.network.internal.util.safeApiCall
+import com.wakeupgetapp.core.network.internal.api.CurrencyApiService
+import com.wakeupgetapp.core.network.internal.api.CurrencyBackupApiService
+import com.wakeupgetapp.core.network.internal.model.CurrencyTableDto
+import com.wakeupgetapp.core.network.internal.util.safeApiCall
 import javax.inject.Inject
 
 internal class CurrencyUpdateRepositoryImpl @Inject constructor(

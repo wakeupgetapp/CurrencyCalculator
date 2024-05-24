@@ -1,6 +1,6 @@
-package com.wakeupgetapp.network.internal.util
+package com.wakeupgetapp.core.network.internal.util
 
-import com.wakeupgetapp.network.model.CallResult
+import com.wakeupgetapp.core.network.model.CallResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.ResponseBody

@@ -1,6 +1,6 @@
-package com.wakeupgetapp.network.internal.api
+package com.wakeupgetapp.core.network.internal.api
 
-import com.wakeupgetapp.network.internal.model.CurrencyTableDto
+import com.wakeupgetapp.core.network.internal.model.CurrencyTableDto
 import retrofit2.http.GET
 
 

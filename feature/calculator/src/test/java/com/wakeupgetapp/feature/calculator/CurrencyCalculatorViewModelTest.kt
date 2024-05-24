@@ -13,7 +13,7 @@ import com.wakeupgetapp.core.model.Currency
 import com.wakeupgetapp.core.model.CurrencyTable
 import com.wakeupgetapp.core.model.CurrencyUpdateState
 import com.wakeupgetapp.core.model.CustomExchange
-import com.wakeupgetapp.network.model.CallResult
+import com.wakeupgetapp.core.network.model.CallResult
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before

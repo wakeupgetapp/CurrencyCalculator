@@ -58,7 +58,7 @@ fun RatesInfoComponent(
                 }
             }
             trailingComponent = {
-                Text(text = ". ")
+                Text(text = ". ", color = Color.White)
                 Text(
                     text = stringResource(id = R.string.try_again),
                     modifier = Modifier.clickable { tryAgainButton() },

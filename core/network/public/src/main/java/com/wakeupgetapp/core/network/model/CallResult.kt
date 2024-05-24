@@ -1,4 +1,4 @@
-package com.wakeupgetapp.network.model
+package com.wakeupgetapp.core.network.model
 
 sealed class CallResult<out T> {
     data class Success<out T>(val value: T): CallResult<T>()

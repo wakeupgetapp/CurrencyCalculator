@@ -2,7 +2,7 @@ package com.wakeupgetapp.core.domain
 
 import com.wakeupgetapp.core.model.CurrencyUpdateState
 import com.wakeupgetapp.core.data.repository.CurrencyRepository
-import com.wakeupgetapp.network.model.CallResult
+import com.wakeupgetapp.core.network.model.CallResult
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
