@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.Dp
 import com.wakeupgetapp.core.ui.common.CommonWhiteButton
 import com.wakeupgetapp.core.ui.common.CurrencyBaseText
 import com.wakeupgetapp.core.ui.common.CurrencyTextContainer
+import com.wakeupgetapp.core.ui.common.anim.ShakeAnimation
 
 @Composable
 fun CurrencyRow(
@@ -22,6 +23,7 @@ fun CurrencyRow(
     currencyName: String,
     currencyHint: String,
     amount: String,
+    animateContainer: Boolean,
     currencyNameOnClick: () -> Unit,
     currencySelectorTextWidth: Dp,
     amountHint: String
@@ -31,13 +33,15 @@ fun CurrencyRow(
             .fillMaxWidth()
             .wrapContentSize(), horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        CommonWhiteButton(
-            text = currencyName,
-            hint = currencyHint,
-            icon = Icons.Default.KeyboardArrowDown,
-            modifier = Modifier.width(currencySelectorTextWidth),
-            onClick = { currencyNameOnClick() }
-        )
+        ShakeAnimation(enable = animateContainer && currencyName.isBlank()) {
+            CommonWhiteButton(
+                text = currencyName,
+                hint = currencyHint,
+                icon = Icons.Default.KeyboardArrowDown,
+                modifier = Modifier.width(currencySelectorTextWidth),
+                onClick = { currencyNameOnClick() }
+            )
+        }
 
         CurrencyTextContainer(
             borderColor = Color.LightGray

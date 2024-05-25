@@ -29,6 +29,7 @@ fun CurrencyCalculatorRoute(
                 baseAmount = uiState.selectedCurrencies.baseAmount,
                 exchangeAmount = uiState.selectedCurrencies.exchangeAmount,
                 exchangeRate = uiState.selectedCurrencies.rate,
+                animateCurrencyContainer = uiState.selectedCurrencies.animateContainer,
                 currencyList = uiState.bottomSheetData.filteredList,
                 recentList = uiState.bottomSheetData.recentList,
                 customExchanges = uiDataState.customExchangeList,

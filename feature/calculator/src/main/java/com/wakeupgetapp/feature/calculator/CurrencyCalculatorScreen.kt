@@ -33,6 +33,7 @@ fun CurrencyCalculatorScreen(
     baseAmount: String,
     exchangeAmount: String,
     exchangeRate: String,
+    animateCurrencyContainer: Boolean,
     currencyList: List<Currency>,
     recentList: List<Currency>,
     customExchanges: List<CustomExchange>,
@@ -49,7 +50,7 @@ fun CurrencyCalculatorScreen(
     deleteCurrencyExchange: (Long) -> Unit,
     setCurrencyCustomExchange: (Long) -> Unit,
     keyboardOnClick: (String, Boolean) -> Unit,
-    updateInfoComponent: @Composable () -> Unit,
+    updateInfoComponent: @Composable () -> Unit
 ) {
     CurrencySelectorBottomSheet(
         showBottomSheet = showCurrencySelector,
@@ -82,6 +83,7 @@ fun CurrencyCalculatorScreen(
                 currencyTargetName = targetCurrency,
                 baseAmount = baseAmount,
                 targetAmount = exchangeAmount,
+                animateCurrencyContainer = animateCurrencyContainer,
                 currencyBaseOnClick = openCurrencySelectorBase,
                 currencyToExchangeOnClick = openCurrencySelectorExchange
             )

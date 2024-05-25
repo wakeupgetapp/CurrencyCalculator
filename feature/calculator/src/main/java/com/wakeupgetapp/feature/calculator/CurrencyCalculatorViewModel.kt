@@ -14,6 +14,7 @@ import com.wakeupgetapp.core.model.Currency
 import com.wakeupgetapp.core.model.CustomExchange
 import com.wakeupgetapp.core.model.CurrencyUpdateState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -51,6 +52,17 @@ class CurrencyCalculatorViewModel @Inject constructor(
     private val currencySelectorTarget = MutableStateFlow(CurrencySelectorTarget.NONE)
     fun setCurrencyTarget(value: CurrencySelectorTarget) {
         currencySelectorTarget.value = value
+    }
+
+    private val animateEmptyCurrencyContainer = MutableStateFlow(false)
+
+    private fun launchCurrencyContainerAnimation() {
+        if (animateEmptyCurrencyContainer.value) return
+        viewModelScope.launch {
+            animateEmptyCurrencyContainer.value = true
+            delay(1000)
+            animateEmptyCurrencyContainer.value = false
+        }
     }
 
     fun setCurrency(value: String) {
@@ -109,11 +121,15 @@ class CurrencyCalculatorViewModel @Inject constructor(
     }
 
     fun handleKeyboardInput(input: String, longClick: Boolean) {
-        if (selectedCurrenciesData.value is SelectedCurrenciesData.IncompleteLoaded) return
+        if (selectedCurrenciesData.value is SelectedCurrenciesData.IncompleteLoaded) {
+            launchCurrencyContainerAnimation()
+            return
+        }
         amount.value = updateAmountUseCase(input, amount.value, longClick)
     }
 
-    private val currencyUpdateState = MutableStateFlow<CurrencyUpdateState>(CurrencyUpdateState.Loading)
+    private val currencyUpdateState =
+        MutableStateFlow<CurrencyUpdateState>(CurrencyUpdateState.Loading)
 
     private val dataState: StateFlow<DataState> = combine(
         repository.getCurrencies(), repository.getCustomExchanges()
@@ -170,8 +186,8 @@ class CurrencyCalculatorViewModel @Inject constructor(
     )
 
     private val selectedCurrencies: SharedFlow<SelectedCurrencies> = combine(
-        selectedCurrenciesData, currenciesSwitched, amount
-    ) { data, switched, amount ->
+        selectedCurrenciesData, currenciesSwitched, amount, animateEmptyCurrencyContainer
+    ) { data, switched, amount, animateContainer ->
         when (data) {
             is SelectedCurrenciesData.LoadedCurrency -> {
                 var base = data.base
@@ -212,7 +228,8 @@ class CurrencyCalculatorViewModel @Inject constructor(
                     targetCode = data.target?.code ?: "",
                     baseAmount = "",
                     exchangeAmount = "",
-                    rate = ""
+                    rate = "",
+                    animateContainer = animateContainer
                 )
             }
         }
@@ -281,8 +298,6 @@ data class BottomSheetData(
     val goToRecent: Boolean = false
 )
 
-
-
 sealed interface SelectedCurrenciesData {
     data class LoadedCurrency(
         val base: Currency,
@@ -302,7 +317,8 @@ data class SelectedCurrencies(
     val targetCode: String = "",
     val baseAmount: String = "",
     val exchangeAmount: String = "",
-    val rate: String = ""
+    val rate: String = "",
+    val animateContainer: Boolean = false
 )
 
 enum class CurrencySelectorTarget {

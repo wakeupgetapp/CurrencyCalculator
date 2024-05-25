@@ -28,6 +28,7 @@ fun CurrencyExchangeColumn(
     currencyTargetName: String,
     baseAmount: String,
     targetAmount: String,
+    animateCurrencyContainer: Boolean,
     currencyBaseOnClick: () -> Unit,
     currencyToExchangeOnClick: () -> Unit
 ) {
@@ -59,8 +60,9 @@ fun CurrencyExchangeColumn(
                     currencyHint = "USD",
                     amount = baseAmount,
                     amountHint = baseAmountHint,
+                    animateContainer = animateCurrencyContainer,
                     currencyNameOnClick = currencyBaseOnClick,
-                    currencySelectorTextWidth = currencySelectorTextWidth
+                    currencySelectorTextWidth = currencySelectorTextWidth,
                 )
 
 
@@ -82,6 +84,7 @@ fun CurrencyExchangeColumn(
                     currencyHint = "EUR",
                     amount = targetAmountText,
                     amountHint = targetAmountHint,
+                    animateContainer = animateCurrencyContainer,
                     currencyNameOnClick = currencyToExchangeOnClick,
                     currencySelectorTextWidth = currencySelectorTextWidth
                 )

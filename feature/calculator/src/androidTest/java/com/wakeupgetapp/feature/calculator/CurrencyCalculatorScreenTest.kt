@@ -58,6 +58,7 @@ class CurrencyCalculatorScreenTest {
         baseAmount: String = "",
         exchangeAmount: String = "",
         exchangeRate: String = "",
+        animateCurrencyContainer: Boolean = false,
         currencyList: List<Currency> = emptyList(),
         recentList: List<Currency> = emptyList(),
         customExchanges: List<CustomExchange> = emptyList(),
@@ -83,6 +84,7 @@ class CurrencyCalculatorScreenTest {
                 baseAmount = baseAmount,
                 exchangeAmount = exchangeAmount,
                 exchangeRate = exchangeRate,
+                animateCurrencyContainer = animateCurrencyContainer,
                 currencyList = currencyList,
                 recentList = recentList,
                 customExchanges = customExchanges,
@@ -99,7 +101,7 @@ class CurrencyCalculatorScreenTest {
                 deleteCurrencyExchange = deleteCurrencyExchange,
                 setCurrencyCustomExchange = setCurrencyCustomExchange,
                 keyboardOnClick = keyboardOnClick,
-                updateInfoComponent = updateInfoComponent,
+                updateInfoComponent = updateInfoComponent
             )
         }
     }
