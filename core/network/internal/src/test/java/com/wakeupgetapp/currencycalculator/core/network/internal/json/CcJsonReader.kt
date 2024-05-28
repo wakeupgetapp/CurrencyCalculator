@@ -1,4 +1,4 @@
-package com.wakeupgetapp.currencycalculator.network.internal.json
+package com.wakeupgetapp.currencycalculator.core.network.internal.json
 
 import java.io.BufferedReader
 import java.io.File

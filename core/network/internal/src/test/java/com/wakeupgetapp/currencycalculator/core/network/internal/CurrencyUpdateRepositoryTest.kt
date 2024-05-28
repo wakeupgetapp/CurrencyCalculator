@@ -3,7 +3,7 @@ package com.wakeupgetapp.currencycalculator.core.network.internal
 import com.wakeupgetapp.core.data.repository.CurrencyUpdateRepository
 import com.wakeupgetapp.core.model.Currency
 import com.wakeupgetapp.core.model.CurrencyTable
-import com.wakeupgetapp.currencycalculator.network.internal.json.CcJsonReader
+import com.wakeupgetapp.currencycalculator.core.network.internal.json.CcJsonReader
 import com.wakeupgetapp.core.network.internal.api.CurrencyApiService
 import com.wakeupgetapp.core.network.internal.api.CurrencyBackupApiService
 import com.wakeupgetapp.core.network.internal.repository.CurrencyUpdateRepositoryImpl
